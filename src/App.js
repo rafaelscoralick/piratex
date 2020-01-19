@@ -1,24 +1,28 @@
 
 
 import React, { useState, useEffect } from 'react';
-import { getMovie } from "./services/api" 
+import { getMovieList } from "./services/api" 
+import Card from './card';
 
 function App() {
 
   const [movies, setMovies] = useState([]);
 
-
-  useEffect(() => {
-    getMovie().then( function(movie){
+  const fetch = ()=>{
+    getMovieList().then( function(movie){
       setMovies( movie )
     })
-  });
+  }
+
+  useEffect(() => {
+    fetch();
+  }, []);
 
 
 
   return (
     <div className="App">
-      {movies.map((movie,key)=> (<p key={key}>{movie.Title}</p>) )}
+      { movies.map((movie,key)=> (<Card key={key} imdbId={movie.imdbID}/>) )}
     </div>
   );
 }

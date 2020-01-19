@@ -19,14 +19,13 @@ export async function getMovie(imdbID){
     );
 
     if(inCache){
-        console.log("in cache");
-        
+        console.log("in cache",inCache);
         return inCache;
     }
-    console.log("no cache");
     return axios.get(imdbAPI, {
         params: { i: imdbID } 
     }).then( (movie)=>{
+        console.log("no cache", movie.data);
         sessionStorage.setItem("inCache", JSON.stringify([...store, movie.data]) )
         return movie.data
     } )

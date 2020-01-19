@@ -1,0 +1,40 @@
+.card{
+    display: flex;
+    flex-flow: column;
+    width: calc(50% - 1rem);
+    margin: .5rem;
+    background: #00FF12  ;  
+    color: #000;
+    .imgContainer{
+        position: relative;
+        height: 160px;
+        overflow-y: hidden;
+        border: 1px solid #00FF12;
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+    .info{
+        display: flex;
+        justify-content: space-between;
+        .data{
+            padding: .5rem;
+            font-size: 10px;
+        }
+        h3{
+            //height: 1.4rem;
+            font-size: .7rem;
+            font-weight: bold;
+        }
+        button{
+            background: none;
+            border: none;
+        }
+        h3,p{
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+}
