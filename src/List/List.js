@@ -34,7 +34,7 @@ function List({ searchTerm }) {
         fetch(searchTerm)
     }, [searchTerm]);
 
-    function loadFunc(){
+    function loadMore(){
         if(loaded){
             setPage( page +1);
         }
@@ -45,8 +45,8 @@ function List({ searchTerm }) {
     <InfiniteScroll
         className="list"
         pageStart={ page }
-        loadMore={ loadFunc }
-        hasMore={true || false}
+        loadMore={ loadMore }
+        hasMore={ items.length > 4 }
         loader={<div className="loader" key={0}>Loading ...</div>}
     >
         { items.length ? 

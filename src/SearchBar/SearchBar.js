@@ -11,8 +11,6 @@ const Searchbar = ({ searchTerm })=> {
 
   useEffect(() => {
     searchTerm(debounced)
-    console.log("debounced",debounced);
-    
   }, [debounced, searchTerm]);
 
   return (
