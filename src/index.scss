@@ -27,22 +27,19 @@ body {
       height: 1rem;
       vertical-align: middle;
     }
-    button{
+    .button{
       background: #00ff12;
       border: 1px solid #00ff12;
       border-radius: 5px;
+      font-size: 0.9rem;
+      text-decoration: none;
+      color: #000;
     }
   }
 
-
-  .list{
-    display: flex;
-    flex-wrap: wrap;
-  }
   .failFilmList{
     width: 100%;
     text-align: center;
     margin-top: 4rem;
   }
-
 }
