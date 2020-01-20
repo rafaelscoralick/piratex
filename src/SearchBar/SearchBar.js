@@ -1,16 +1,19 @@
 
 
 import React, { useState, useEffect } from 'react';
+import debounce from './debounce';
 import "./searchBar.scss"
 
-const Searchbar = ({imdbId, searchTerm})=> {
-  const [term, setTerm] = useState("")
 
+const Searchbar = ({ searchTerm })=> {
+  const [term, setTerm] = useState("")
+  let debounced  = debounce( term, 500)
 
   useEffect(() => {
-    console.log("term",term)
-    searchTerm(term)
-  }, [term, searchTerm]);
+    searchTerm(debounced)
+    console.log("debounced",debounced);
+    
+  }, [debounced, searchTerm]);
 
   return (
     <div className="searchBar">
