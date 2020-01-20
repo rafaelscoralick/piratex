@@ -15,15 +15,12 @@ const Card = ({imdbId})=> {
         Title: ""
   });
 
-
   useEffect(() => {
     setFavo(imdbId, fav)
   }, [fav, imdbId]);
 
-
   useEffect(() => {
     const f = isFav(imdbId);
-    
     setFav(f)
 
     fetchData(imdbId).then(function(m){

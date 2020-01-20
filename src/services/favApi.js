@@ -12,6 +12,13 @@ export function isFav(imdbID){
     return false;
 }
 
+export function favList( page ){
+    const store = JSON.parse(sessionStorage.getItem("isFav")) || [];
+    return  store.filter(item=>
+        item.isFav === true
+    );
+}
+
 export function setFavo(imdbID, estado){
     const store = JSON.parse(sessionStorage.getItem("isFav")) || [];
     let fav = store.find(item=>
