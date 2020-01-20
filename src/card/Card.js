@@ -39,11 +39,19 @@ const Card = ({imdbId})=> {
     return text
   }
 
+  function getImage(){
+    if(window.matchMedia("(min-width: 768px)").matches){
+      return notfoundDesktop
+    }
+    return notfound
+  }
+
+
   return (
     <div className="card">
       <a href={`https://www.imdb.com/title/${imdbId}`}>
         <div className="imgContainer">
-          <img src={ movie.Poster !== "N/A" ? movie.Poster : notfoundDesktop } alt='poster do filme'/>
+          <img src={ movie.Poster !== "N/A" ? movie.Poster : getImage() } alt='poster do filme'/>
         </div>
       </a>
       <span className='info'>

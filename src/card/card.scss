@@ -10,10 +10,14 @@
     color: #000;
     .imgContainer{
         position: relative;
-        height: 180px;
+        height: 143px;
         overflow-y: hidden;
         overflow-x: hidden;
         border: 0px solid #00FF12;
+
+        @media (min-width: 1200px) {
+            height: 180px;
+        }
         img{
             width: 100%;
             height: auto;
