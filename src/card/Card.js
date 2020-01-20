@@ -8,7 +8,6 @@ import favIcon from "../assets/fav.svg"
 import favIconActive from "../assets/fav-active.svg"
 import notfound from "../assets/notfound.png";
 
-
 const Card = ({imdbId})=> {
   const [fav, setFav] = useState(false)
 
