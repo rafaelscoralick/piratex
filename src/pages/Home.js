@@ -4,14 +4,15 @@ import List from "../List/List"
 import Logo from "../assets/logo.png"
 import favIcon from "../assets/fav.svg"
 import { Link } from "react-router-dom";
+import "./page.scss";
 
 function Home() {
   const [searchTerm, setSearchTerm ] = useState("")
 
   return (
-    <div className="Home">
+    <div className="page home">
 
-      <div className="imgContainer">
+      <div className="logoContainer">
         <img src={Logo} alt="piratex logo"/>
       </div>
       
