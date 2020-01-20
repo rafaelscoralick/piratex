@@ -1,7 +1,7 @@
 
 
 export function isFav(imdbID){
-    const store = JSON.parse(sessionStorage.getItem("isFav")) || [];
+    const store = JSON.parse(localStorage.getItem("isFav")) || [];
     const fav = store.find(item=>
         item.imdbID === imdbID
     );
@@ -13,14 +13,14 @@ export function isFav(imdbID){
 }
 
 export function favList( page ){
-    const store = JSON.parse(sessionStorage.getItem("isFav")) || [];
+    const store = JSON.parse(localStorage.getItem("isFav")) || [];
     return  store.filter(item=>
         item.isFav === true
     );
 }
 
 export function setFavo(imdbID, estado){
-    const store = JSON.parse(sessionStorage.getItem("isFav")) || [];
+    const store = JSON.parse(localStorage.getItem("isFav")) || [];
     let fav = store.find(item=>
         item.imdbID === imdbID
     );
@@ -33,5 +33,5 @@ export function setFavo(imdbID, estado){
         store.push(fav)
     }
     fav.isFav = estado;
-    sessionStorage.setItem("isFav", JSON.stringify([...store]) )
+    localStorage.setItem("isFav", JSON.stringify([...store]) )
 }
