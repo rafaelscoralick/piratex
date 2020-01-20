@@ -7,6 +7,7 @@ import "./card.scss"
 import favIcon from "../assets/fav.svg"
 import favIconActive from "../assets/fav-active.svg"
 import notfound from "../assets/notfound.png";
+import notfoundDesktop from "../assets/notfound-desktop.png";
 
 const Card = ({imdbId})=> {
   const [fav, setFav] = useState(false)
@@ -40,9 +41,11 @@ const Card = ({imdbId})=> {
 
   return (
     <div className="card">
-      <div className="imgContainer">
-        <img src={ movie.Poster !== "N/A" ? movie.Poster : notfound } alt='poster do filme'/>
-      </div>
+      <a href={`https://www.imdb.com/title/${imdbId}`}>
+        <div className="imgContainer">
+          <img src={ movie.Poster !== "N/A" ? movie.Poster : notfoundDesktop } alt='poster do filme'/>
+        </div>
+      </a>
       <span className='info'>
         <div className='data'>
             <h3>{ title(movie.Title) }</h3>
@@ -50,6 +53,7 @@ const Card = ({imdbId})=> {
         </div>
         <button onClick={()=>setFav(!fav)}><img src={ fav ? favIconActive : favIcon } alt="favoritar" /></button>
       </span>
+      
     </div>
   );
 }
