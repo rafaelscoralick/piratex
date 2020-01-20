@@ -9,37 +9,4 @@ body {
   .App{
     padding: .5rem;
   }
-
-  .imgContainer{
-    margin: 1rem auto;
-    text-align: center;
-    img{
-      width: 75px;
-      height: auto;
-    }
-  }
-
-  .favbutton{
-    text-align: center;
-    margin: 1rem auto;
-    img{
-      width: auto;
-      height: 1rem;
-      vertical-align: middle;
-    }
-    .button{
-      background: #00ff12;
-      border: 1px solid #00ff12;
-      border-radius: 5px;
-      font-size: 0.9rem;
-      text-decoration: none;
-      color: #000;
-    }
-  }
-
-  .failFilmList{
-    width: 100%;
-    text-align: center;
-    margin-top: 4rem;
-  }
 }

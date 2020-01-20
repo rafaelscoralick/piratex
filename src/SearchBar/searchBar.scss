@@ -5,6 +5,11 @@
         background-color: black;
         color: #666;
         border: 1px solid #00FF12;
-    }
 
+        @media (min-width: 1200px) {
+            font-size: 1.5rem;
+            padding: 0.5rem;
+            width: calc(50%);
+        }
+    }
 }

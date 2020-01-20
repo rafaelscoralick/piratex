@@ -1,0 +1,97 @@
+.page{
+    margin: 0 auto;
+    @media (min-width: 767px)  {
+        max-width: 768px; 
+    }
+    @media (min-width: 1023px)  {
+        max-width:  768px;
+    }
+    @media (min-width: 1200px) {
+        max-width: 1200px;
+    }
+}
+
+.home {
+    .logoContainer {
+        margin: 1rem auto;
+        text-align: center;
+
+        img {
+            width: 75px;
+            height: auto;
+            
+            @media (min-width: 1200px) {
+                width: 160px;
+            }
+        }
+    }
+
+    .favbutton {
+        text-align: center;
+        margin: 1rem auto;
+        @media (min-width: 1200px) {
+            margin: 2rem 0;
+        }
+        img {
+            width: auto;
+            height: 1rem;
+            vertical-align: middle;
+        }
+
+        .button {
+            background: #00ff12;
+            border: 1px solid #00ff12;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            color: #000;
+            @media (min-width: 1200px) {
+                font-size: 0.9rem;
+                padding: .5rem;
+            }
+        }
+    }
+
+    .failFilmList {
+        width: 100%;
+        text-align: center;
+        margin-top: 4rem;
+    }
+}
+
+
+
+
+.favoriteList {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1rem;
+
+        h1 {
+            margin: 0;
+            font-weight: bold;
+            font-size: 36px;
+        }
+
+        h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .button {
+            background: #00ff12;
+            border: 1px solid #00ff12;
+            border-radius: 100%;
+            font-size: 2rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: #000;
+            width: 2rem;
+            height: 2rem;
+            line-height: 2rem;
+            text-align: center;
+        }
+    }
+}

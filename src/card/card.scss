@@ -2,19 +2,29 @@
     display: flex;
     flex-flow: column;
     width: calc(50% - 1rem);
+    @media (min-width: 1200px) {
+        width: calc(33% - 1rem);
+    }
     margin: .5rem;
     background: #00FF12;  
     color: #000;
     .imgContainer{
         position: relative;
-        height: 150px;
+        height: 180px;
         overflow-y: hidden;
-        border: 1px solid #00FF12;
+        overflow-x: hidden;
+        border: 0px solid #00FF12;
         img{
             width: 100%;
             height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
         }
     }
+
     .info{
         display: flex;
         justify-content: space-between;
@@ -23,7 +33,6 @@
             font-size: 10px;
         }
         h3{
-            //height: 1.4rem;
             font-size: .7rem;
             font-weight: bold;
         }
