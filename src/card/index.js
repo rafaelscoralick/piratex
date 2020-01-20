@@ -1,7 +1,8 @@
 
 
 import React, { useState, useEffect } from 'react';
-import { getMovie, isFav, setFavo } from "../services/api" 
+import { isFav, setFavo } from "../services/favApi" 
+import fetchData from "../services/imdbApi"
 import "./card.scss"
 import favIcon from "../assets/fav.svg"
 import favIconActive from "../assets/fav-active.svg"
@@ -26,7 +27,7 @@ const Card = ({imdbId})=> {
     
     setFav(f)
 
-    getMovie(imdbId).then(function(m){
+    fetchData(imdbId).then(function(m){
         setMovie( m )
     })
   }, [imdbId]);
