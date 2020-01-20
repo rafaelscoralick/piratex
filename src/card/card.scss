@@ -7,7 +7,7 @@
     color: #000;
     .imgContainer{
         position: relative;
-        height: 160px;
+        height: 150px;
         overflow-y: hidden;
         border: 1px solid #00FF12;
         img{
@@ -30,6 +30,9 @@
         button{
             background: none;
             border: none;
+            &:focus {
+                outline: none;
+            }
         }
         h3,p{
             padding: 0;

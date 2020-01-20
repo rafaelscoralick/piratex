@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from 'react';
 import { getMovieList } from "./services/api" 
 import Card from './card';
@@ -17,8 +15,6 @@ function App() {
   useEffect(() => {
     fetch();
   }, []);
-
-
 
   return (
     <div className="App">

@@ -1,19 +1,31 @@
 
 
 import React, { useState, useEffect } from 'react';
-import { getMovie } from "../services/api" 
+import { getMovie, isFav, setFavo } from "../services/api" 
 import "./card.scss"
-import fav from "../assets/fav.svg"
-import favActive from "../assets/fav-active.svg"
+import favIcon from "../assets/fav.svg"
+import favIconActive from "../assets/fav-active.svg"
+import notfound from "../assets/notfound.png";
 
 
 const Card = ({imdbId})=> {
+  const [fav, setFav] = useState(false)
 
   const [movie, setMovie] = useState({
         Title: ""
   });
 
+
   useEffect(() => {
+    setFavo(imdbId, fav)
+  }, [fav, imdbId]);
+
+
+  useEffect(() => {
+    const f = isFav(imdbId);
+    
+    setFav(f)
+
     getMovie(imdbId).then(function(m){
         setMovie( m )
     })
@@ -27,19 +39,17 @@ const Card = ({imdbId})=> {
     return text
   }
 
-
-
   return (
     <div className="card">
       <div className="imgContainer">
-        <img src={ movie.Poster !== "N/A" ? movie.Poster : "https://via.placeholder.com/150" } alt='poster do filme'/>
+        <img src={ movie.Poster !== "N/A" ? movie.Poster : notfound } alt='poster do filme'/>
       </div>
       <span className='info'>
         <div className='data'>
             <h3>{ title(movie.Title) }</h3>
             <p>{movie.Year}</p>
         </div>
-        <button onClick={()=>alert("favoritado")}><img src={ true ? fav : favActive } alt="favoritar" /></button>
+        <button onClick={()=>setFav(!fav)}><img src={ fav ? favIconActive : favIcon } alt="favoritar" /></button>
       </span>
     </div>
   );
